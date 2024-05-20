@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<form method="post">
+	{% csrf_token %}
+	<fieldset>
+		<h1 class="tablink" onclick="openPage('new')" id="defaultOpen">Add Section</h1>
+		<a href="{% url 'editsection' %}"><h1 class="tablink" onclick="openPage('edit')" id="link_to_edit">Edit Section</h1></a>
+		<div class="tabcontent" id="new">
+			{{ form.as_p }}
+				<a href="{% url 'editsection' %}"><h1 class="submit" onclick="openPage('edit')">View / Edit Sections</h1></a>
+				<input type="submit" value="Add Sections" class="submit">
+		</div>
+	</fieldset>
+</form>
+<div class="img">
+
+</div>
+
+{% endblock %}

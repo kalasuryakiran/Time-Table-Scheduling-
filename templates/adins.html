@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<form method="post">
+	{% csrf_token %}
+	<fieldset>
+		<h1 class="tablink" onclick="openPage('new')" id="defaultOpen">Add Instructor</h1>
+		<a href="{% url 'editinstructor' %}"><h1 class="tablink" onclick="openPage('edit')" id="link_to_edit">Edit Instructor</h1></a>
+		<div class="tabcontent" id="new">
+			{{ form.as_p }}
+			<a href="{% url 'editinstructor' %}"><h1 class="submit" onclick="openPage('edit')">View / Edit Teachers</h1></a>
+			<input type="submit" value="Add Teacher" class="submit">
+		</div>
+	</fieldset>
+</form>
+{% endblock %}
